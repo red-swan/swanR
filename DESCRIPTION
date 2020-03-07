@@ -1,0 +1,11 @@
+Package: swanR
+Type: Package
+Title: red swan's personal R functions
+Version: 0.1
+Author: Red Swan
+Maintainer: Red Swan <redswan@outlook.com>
+Description: Convenience functions I use when working with R.
+License: None
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
