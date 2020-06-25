@@ -87,3 +87,7 @@ asd <- function() assignLast('asd')
 #' @describeIn assignLast Assign .Last.value to asd
 #' @export
 zxc <- function() assignLast('zxc')
+
+#' Get an object's size in MB
+#' @export
+objSize <- function(x) { object.size(x) %>% format("Mb") }
