@@ -1,7 +1,7 @@
 Package: swanR
 Type: Package
 Title: red swan's personal R functions
-Version: 0.1
+Version: 0.2
 Author: Red Swan
 Maintainer: Red Swan <redswan@outlook.com>
 Description: Convenience functions I use when working with R.

@@ -90,4 +90,4 @@ zxc <- function() assignLast('zxc')
 
 #' Get an object's size in MB
 #' @export
-objSize <- function(x) { object.size(x) %>% format("Mb") }
+object.Mb <- function(x) { object.size(x) %>% format("Mb") }
