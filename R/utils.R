@@ -7,19 +7,19 @@ openwd <- function(){
   shell.exec(getwd())
 }
 
-#'Assign a vector's values to its names
+#' Assign a vector's values to its names
 #'
-#'This function is mostly used when the start of a chained (e.g. \code{%>%})
-#'computation, it is good to have the initial parameters be names of the output
-#'@param x A vector
-#'@examples
-#'selfname(1:10)
+#' This function is mostly used when the start of a chained (e.g. \code{%>%})
+#' computation, it is good to have the initial parameters be names of the output
+#' @param x A vector
+#' @examples
+#' selfname(1:10)
 #'
-#'c(4,6,8) %>%
-#'selfName %>%
-#'map(~ mtcars[mtcars$cyl == .x, ])
+#' c(4,6,8) %>%
+#' selfName %>%
+#' map(~ mtcars[mtcars$cyl == .x, ])
 #'
-#'  @export
+#'   @export
 selfName <- function(x){
   output <- x
   names(output) <- x
@@ -91,3 +91,13 @@ zxc <- function() assignLast('zxc')
 #' Get an object's size in MB
 #' @export
 object.Mb <- function(x) { object.size(x) %>% format("Mb") }
+
+#' Coerce a matrix's rows/columns to a list
+#' @export
+as.list.matrix <- function(x, margin = 2){
+  switch (margin,
+          lapply(seq_len(nrow(x)), function(i) x[i,]),
+          lapply(seq_len(ncol(x)), function(i) x[,i]),
+          stop("margin must be 1 for rows or 2 for columns")
+  )
+}
